@@ -269,23 +269,23 @@ export default function Home({ articles }) {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://instagram.com"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            <SocialLink
-              href="https://github.com"
-              aria-label="Follow on GitHub"
+              href={process.env.NEXT_PUBLIC_GITHUB_LINK || '#'}
+              aria-label="See my code on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com"
-              aria-label="Follow on LinkedIn"
+              href={process.env.NEXT_PUBLIC_LINKEDIN_LINK || '#'}
+              aria-label="Connect with me on LinkedIn"
               icon={LinkedInIcon}
             />
             <SocialLink
-              href="https://instagram.com"
-              aria-label="Follow on Instagram"
+              href={process.env.NEXT_PUBLIC_INSTAGRAM_LINK || '#'}
+              aria-label="Follow me on Instagram"
+              icon={InstagramIcon}
+            />
+            <SocialLink
+              href={process.env.NEXT_PUBLIC_MAILTO_LINK || '#'}
+              aria-label="Email mes"
               icon={EmailIcon}
             />
           </div>
