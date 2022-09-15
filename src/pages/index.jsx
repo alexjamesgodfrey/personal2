@@ -12,10 +12,8 @@ import {
   InstagramIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoCornell from '@/images/logos/cornell.svg'
+import logoStudyflow from '@/images/logos/studyflow.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -139,35 +137,32 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'CS 1110 - Intro to Computing',
+      title: 'Consultant',
+      logo: logoCornell,
+      start: 'Aug 2022',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      company: 'Studyflow',
+      title: 'Founder',
+      logo: logoStudyflow,
+      start: 'May 2022',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear(),
+      },
     },
+
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Godfrey Enterprises',
+      title: 'Co-Founder',
+      start: 'Feb 2020',
+      end: 'Aug 2021',
+      color: 'bg-brown-300',
     },
   ]
 
@@ -180,9 +175,15 @@ function Resume() {
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
-            </div>
+            {role.logo ? (
+              <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+              </div>
+            ) : (
+              <div className='dark:ring-0" relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800'>
+                <div className='dark:ring-0" mt-1 mb-1 flex h-7 w-7 items-center justify-center rounded-full bg-amber-700 dark:bg-amber-800'></div>
+              </div>
+            )}
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
@@ -212,7 +213,7 @@ function Resume() {
         ))}
       </ol>
       <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
+        Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
@@ -253,7 +254,7 @@ export default function Home({ articles }) {
         <title>Alex Godfrey - Student, founder, and software developer</title>
         <meta
           name="description"
-          content="I’m Spencer, a Fullstack Developer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+          content="I'm Alex, a Fullstack Developer and entrepreneur based in Dewittville, NY. I'm currently studying computer science, math, and philosophy as a sophomore at Cornell University. I’m also the founder of multiple companies, most recently Studyflow, a student productivity platform."
         />
       </Head>
       <Container className="mt-9">
@@ -262,10 +263,11 @@ export default function Home({ articles }) {
             Student, founder, and software developer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a Fullstack Developer and entrepreneur based in New
-            York City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            I&apos;m Alex, a Fullstack Developer and entrepreneur based in
+            Dewittville, NY. I&apos;m currently studying computer science, math,
+            and philosophy as a sophomore at Cornell University. I&apos;m also
+            the founder of multiple companies, most recently Studyflow, a
+            student productivity platform.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
