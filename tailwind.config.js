@@ -4,6 +4,7 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: ['./src/**/*.{js,jsx}'],
+  safelist: ['bg-purple-400'],
   darkMode: 'class',
   plugins: [require('@tailwindcss/typography')],
   theme: {

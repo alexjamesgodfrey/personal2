@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
 import { formatDate } from '@/lib/formatDate'
+import classNames from 'classnames'
 
 function ArrowLeftIcon(props) {
   return (
@@ -51,16 +52,38 @@ export function ArticleLayout({
             )}
             <article>
               <header className="flex flex-col">
+                <div className="flex w-full justify-between">
+                  <time
+                    dateTime={meta.date}
+                    className="flex items-center justify-between text-base text-zinc-400 dark:text-zinc-500"
+                  >
+                    <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
+                    <span className="ml-3">{formatDate(meta.date)}</span>
+                  </time>
+                  <span className="flex items-center justify-between text-base text-zinc-400 dark:text-zinc-500">
+                    <span className="ml-3">{meta.readLength} minute read</span>
+                  </span>
+                </div>
                 <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
                   {meta.title}
                 </h1>
-                <time
-                  dateTime={meta.date}
-                  className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
-                >
-                  <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
-                  <span className="ml-3">{formatDate(meta.date)}</span>
-                </time>
+                {meta.assignment && (
+                  <div className="mt-3 flex items-center text-zinc-400">
+                    <div
+                      className={classNames(
+                        meta.assignment.courseColor,
+                        'dark:ring-0" mr-2 flex h-2 w-2  items-center justify-center rounded-full'
+                      )}
+                    ></div>
+                    {meta.assignment.title} <span className="mx-1"> | </span>
+                    <a
+                      href={`/education/${meta.assignment.courseCode}`}
+                      className="transition-all hover:text-primary"
+                    >
+                      {meta.assignment.courseTitle}
+                    </a>
+                  </div>
+                )}
               </header>
               <Prose className="mt-8">{children}</Prose>
             </article>
