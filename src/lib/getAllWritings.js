@@ -12,7 +12,7 @@ async function importwriting(writingFilename) {
   }
 }
 
-export async function getAllwritings() {
+export async function getAllWritings() {
   let writingFilenames = await glob(['*.mdx', '*/index.mdx'], {
     cwd: path.join(process.cwd(), 'src/pages/writings'),
   })

@@ -22,7 +22,6 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
-import { getAllwritings } from '@/lib/getAllwritings'
 
 function MailIcon(props) {
   return (
@@ -311,7 +310,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      writings: (await getAllwritings())
+      writings: (await getAllWritings())
         .slice(0, 4)
         .map(({ component, ...meta }) => meta),
     },

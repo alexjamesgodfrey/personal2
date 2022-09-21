@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { formatDate } from '@/lib/formatDate'
-import { getAllwritings } from '@/lib/getAllwritings'
 
 function Writing({ writing }) {
   return (
@@ -60,7 +59,7 @@ export default function WritingsIndex({ writings }) {
 export async function getStaticProps() {
   return {
     props: {
-      writings: (await getAllwritings()).map(({ component, ...meta }) => meta),
+      writings: (await getAllWritings()).map(({ component, ...meta }) => meta),
     },
   }
 }

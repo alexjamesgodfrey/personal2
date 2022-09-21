@@ -3,10 +3,10 @@ import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 import ReactDOMServer from 'react-dom/server'
 
-import { getAllwritings } from './getAllwritings'
+import { getAllWritings } from './getAllWritings'
 
 export async function generateRssFeed() {
-  let writings = await getAllwritings()
+  let writings = await getAllWritings()
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   let author = {
     name: 'Alex Godfrey',
