@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { formatDate } from '@/lib/formatDate'
+import { getAllWritings } from '@/lib/getAllWritings'
 
 function Writing({ writing }) {
   return (
