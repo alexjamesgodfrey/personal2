@@ -1,3 +1,4 @@
+import { WritingLayout } from '@/components/WritingLayout'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 import ReactDOMServer from 'react-dom/server'
@@ -29,9 +30,7 @@ export async function generateRssFeed() {
 
   for (let writing of writings) {
     let url = `${siteUrl}/writings/${writing.slug}`
-    let html = ReactDOMServer.renderToStaticMarkup(
-      <writing.component isRssFeed />
-    )
+    let html = ReactDOMServer.renderToStaticMarkup(<WritingLayout isRssFeed />)
 
     feed.addItem({
       title: writing.title,
