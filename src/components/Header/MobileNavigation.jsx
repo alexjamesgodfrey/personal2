@@ -48,8 +48,8 @@ export default function MobileNavigation(props) {
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/companies">Companies</MobileNavItem>
-                <MobileNavItem href="/education">Education</MobileNavItem>
+                {/* <MobileNavItem href="/companies">Companies</MobileNavItem> */}
+                {/* <MobileNavItem href="/education">Education</MobileNavItem> */}
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
                 <MobileNavItem href="/projects">Writings</MobileNavItem>
                 {/* <MobileNavItem href="/uses">Uses</MobileNavItem> */}

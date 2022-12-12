@@ -64,9 +64,10 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I don&apos;t like talking about myself. I probably won&apos;t
-                fill this in later.{' '}
+                "Nothing Isn't Better Or Worse Than Anything. Nothing Is Just
+                Nothing."
               </p>
+              <p className="m-0 p-0 text-right">- Arya Stark</p>
             </div>
           </div>
           <div className="lg:pl-20">
