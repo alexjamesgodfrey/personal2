@@ -32,7 +32,7 @@ const projects: Project[] = [
       label: 'studyflow.ai',
     },
     logo: logoStudyflow,
-    teks: [Teks.TypeScript, Teks.Next, Teks.Node, Teks.PostgreSQL, Teks.GraphQL, Teks.Prisma, Teks.GCP, Teks.Azure, Teks.AWS, Teks.Tailwind]
+    teks: [Teks.TypeScript, Teks.Next, Teks.Node, Teks.PostgreSQL, Teks.GraphQL, Teks.Prisma, Teks.GCP, Teks.AWS, Teks.Tailwind]
   },
   {
     name: 'Calctrainer',
@@ -116,25 +116,37 @@ export default function Projects() {
       >
         <ul
           role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+          className="flex flex-wrap gap-4 justify-between"
         >
           {projects.map((project) => (
-            <Card as="li" key={project.name} className="relative">
-
-              <div className="flex w-full justify-between">
-                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <div key={project.name} style={{
+              width: '28rem',
+              height: '20rem'
+            }}>
+            <Card as="li" key={project.name} className="">
+              <div className="z-10 flex items-center w-full justify-between">
+                <div className="z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0" style={{
+                  height: '3rem',
+                  width: '3rem',
+                }}>
                   {project.logo ? (
                     <Image
                       src={project.logo}
                       alt=""
                       className="h-8 w-8"
+                      style={
+                        {
+                          height: "2rem",
+                          width: "2rem",
+                        }
+                      }
                       unoptimized
                     />
                   ) : (
                     <div className='dark:ring-0" mt-1 mb-1 flex h-7 w-7 items-center justify-center rounded-full bg-amber-400 dark:bg-amber-800'></div>
                   )}
                 </div>
-                <div className='flex gap-2 mt-2 justify-end flex-wrap'>
+                <div className='flex gap-2 w-16 mt-2 justify-end flex-wrap'>
                   {project.teks.map((tek, i) => (
                     <Image
                     src={getLogo(tek)}
@@ -154,14 +166,16 @@ export default function Projects() {
               </h2>
 
               <div
-                className="text-xs text-zinc-400 transition dark:text-zinc-200"
+                className="text-xs z-10 text-zinc-400 transition dark:text-zinc-200"
                 aria-label={`${project.start} until ${project.end}`}
               >
                 <time dateTime={project.start}>{project.start}</time>{' '}
                 <span aria-hidden="true">—</span>{' '}
                 <time dateTime={project.end}>{project.end}</time>
               </div>
+
               <Card.Description>{project.description}</Card.Description>
+
               <p className="item-center relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-primary dark:text-zinc-200">
                 {project.link.label !== 'private code' ? (
                   <LinkIcon className="h-6 w-6 flex-none" />
@@ -170,7 +184,8 @@ export default function Projects() {
                 )}
                 <span className="ml-2">{project.link.label}</span>
               </p>
-            </Card>
+
+            </Card></div>
           ))}
         </ul>
       </SimpleLayout>
