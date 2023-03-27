@@ -21,7 +21,7 @@ function Writing({ writing }) {
           {formatDate(writing.date)}
         </Card.Eyebrow>
         <Card.Description>{writing.description}</Card.Description>
-        <Card.Cta>Read writing</Card.Cta>
+        <Card.Cta>Read</Card.Cta>
       </Card>
       <Card.Eyebrow
         as="time"
