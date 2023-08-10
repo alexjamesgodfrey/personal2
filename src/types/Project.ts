@@ -18,6 +18,7 @@ export enum Teks {
 
 export interface Project {
   name: string
+  subtitle: string
   description: string
   start: string
   end?: string
@@ -26,5 +27,6 @@ export interface Project {
     label: string
   }
   logo?: any
+  logoDark?: any
   teks: Teks[]
 }

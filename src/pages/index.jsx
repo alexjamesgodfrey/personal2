@@ -1,11 +1,7 @@
-import clsx from 'clsx'
-import Image from 'next/future/image'
-import Head from 'next/head'
-import Link from 'next/link'
-
 import Newsletter from '@/components/About/Newletter'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
+import ConsultationButton from '@/components/ConsultationButton'
 import { Container } from '@/components/Container'
 import {
   EmailIcon,
@@ -13,8 +9,10 @@ import {
   InstagramIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
+import logoAltumDark from '@/images/logos/altum-dark.png'
+import logoAltum from '@/images/logos/altum.png'
+import logoAnyTranscript from '@/images/logos/anytranscript.svg'
 import logoCornell from '@/images/logos/cornell.svg'
-import logoStudyflow from '@/images/logos/studyflow.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -23,6 +21,12 @@ import image5 from '@/images/photos/image-5.jpg'
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllWritings } from '@/lib/getAllWritings'
+import clsx from 'clsx'
+import Image from 'next/future/image'
+import Head from 'next/head'
+import Link from 'next/link'
+import { useContext } from 'react'
+import { DarkModeContext } from '../components/DarkModeContext'
 
 function MailIcon(props) {
   return (
@@ -115,34 +119,30 @@ function SocialLink({ icon: Icon, ...props }) {
 }
 
 function Resume() {
+  const { isDarkMode } = useContext(DarkModeContext)
+
   let resume = [
+    {
+      company: 'AnyTranscript',
+      title: 'Founder',
+      start: 'June 2023',
+      end: 'Present',
+      logo: logoAnyTranscript,
+    },
+    {
+      company: 'Altum Labs',
+      title: 'API Contractor',
+      start: 'May 2023',
+      end: 'August 2023',
+      logo: logoAltum,
+      logoDark: logoAltumDark,
+    },
     {
       company: 'CS 1110 - Intro to Computing',
       title: 'Consultant',
       logo: logoCornell,
       start: 'Aug 2022',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
-    },
-    {
-      company: 'Studyflow',
-      title: 'Founder',
-      logo: logoStudyflow,
-      start: 'May 2022',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
-    },
-
-    {
-      company: 'Godfrey Enterprises',
-      title: 'Co-Founder',
-      start: 'Feb 2020',
-      end: 'Aug 2021',
-      color: 'bg-brown-300',
+      end: 'Dec 2022',
     },
   ]
 
@@ -152,12 +152,29 @@ function Resume() {
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
-      <ol className="mt-6 space-y-4">
+      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+        You can see all my work under "My Work".
+      </p>
+      <ol className="mt-4 space-y-4">
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
             {role.logo ? (
               <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+                {role.logoDark && isDarkMode ? (
+                  <Image
+                    src={role.logoDark}
+                    alt=""
+                    className="h-7 w-7"
+                    unoptimized
+                  />
+                ) : (
+                  <Image
+                    src={role.logo}
+                    alt=""
+                    className="h-7 w-7"
+                    unoptimized
+                  />
+                )}
               </div>
             ) : (
               <div className='dark:ring-0" relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800'>
@@ -200,7 +217,10 @@ function Resume() {
       >
         Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+      </Button>{' '}
+      <div className="mt-4 flex flex-col items-center">
+        <ConsultationButton short />
+      </div>
     </div>
   )
 }
@@ -239,7 +259,10 @@ export default function Home({ writings }) {
         <title>Alex Godfrey - Student, founder, and software developer</title>
         <meta
           name="description"
-          content="I'm Alex, a Fullstack Developer and entrepreneur based in Dewittville, NY. I'm currently studying computer science, math, and philosophy as a sophomore at Cornell University. I’m also the founder of multiple companies, most recently Studyflow, a student productivity platform."
+          content="I'm Alex, a Fullstack Developer and entrepreneur based in
+            Dewittville, NY. I'm currently studying computer science, math,
+            and neuroscience as a junior at Cornell University. I'm also
+            the founder of multiple companies, most recently{' '}"
         />
       </Head>
       <Container className="mt-9">
@@ -250,11 +273,18 @@ export default function Home({ writings }) {
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I&apos;m Alex, a Fullstack Developer and entrepreneur based in
             Dewittville, NY. I&apos;m currently studying computer science, math,
-            and philosophy as a sophomore at Cornell University. I&apos;m also
-            the founder of multiple companies, most recently Studyflow, a
-            student productivity platform.
+            and neuroscience as a junior at Cornell University. I&apos;m also
+            the founder of multiple companies, most recently{' '}
+            <a
+              href="https://anytranscript.ai"
+              target="_blank"
+              className="underline"
+            >
+              AnyTranscript
+            </a>
+            , a suite of AI-powered tools for content creators.
           </p>
-          <div className="mt-6 flex gap-6">
+          <div className="mt-6 flex items-center gap-6">
             <SocialLink
               href={process.env.NEXT_PUBLIC_GITHUB_LINK || '#'}
               target="_blank"
@@ -283,6 +313,7 @@ export default function Home({ writings }) {
               aria-label="Email me"
               icon={EmailIcon}
             />
+            <ConsultationButton />
           </div>
         </div>
       </Container>

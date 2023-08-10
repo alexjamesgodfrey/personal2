@@ -7,7 +7,7 @@ export default function DesktopNavigation(props) {
         <NavItem href="/about">About</NavItem>
         {/* <NavItem href="/companies">Companies</NavItem> */}
         {/* <NavItem href="/education">Education</NavItem> */}
-        <NavItem href="/projects">Projects</NavItem>
+        <NavItem href="/projects">My Work</NavItem>
         <NavItem href="/writings">Writings</NavItem>
         {/* <NavItem href="/uses">Uses</NavItem> */}
       </ul>

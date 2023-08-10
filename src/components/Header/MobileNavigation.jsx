@@ -50,7 +50,7 @@ export default function MobileNavigation(props) {
                 <MobileNavItem href="/about">About</MobileNavItem>
                 {/* <MobileNavItem href="/companies">Companies</MobileNavItem> */}
                 {/* <MobileNavItem href="/education">Education</MobileNavItem> */}
-                <MobileNavItem href="/projects">Projects</MobileNavItem>
+                <MobileNavItem href="/projects">My Work</MobileNavItem>
                 <MobileNavItem href="/projects">Writings</MobileNavItem>
                 {/* <MobileNavItem href="/uses">Uses</MobileNavItem> */}
               </ul>

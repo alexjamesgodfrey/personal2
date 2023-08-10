@@ -3,7 +3,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  content: ['./src/**/*.{js,jsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   safelist: ['bg-purple-400', 'bg-gray-300'],
   darkMode: 'class',
   plugins: [require('@tailwindcss/typography')],

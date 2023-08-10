@@ -3,6 +3,7 @@ import Image from 'next/future/image'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import ConsultationButton from '@/components/ConsultationButton'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
@@ -122,6 +123,7 @@ export default function About() {
           </div>
           <div className="lg:pl-20">
             <ul role="list">
+              <ConsultationButton short />
               <SocialLink
                 href={process.env.NEXT_PUBLIC_GITHUB_LINK}
                 target="_blank"
