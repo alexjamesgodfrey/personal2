@@ -153,7 +153,7 @@ function Resume() {
         <span className="ml-3">Work</span>
       </h2>
       <p className="text-sm text-zinc-600 dark:text-zinc-400">
-        You can see all my work under "My Work".
+        You can see all my work under &quot;My Work&quot;.
       </p>
       <ol className="mt-4 space-y-4">
         {resume.map((role, roleIndex) => (
@@ -278,6 +278,7 @@ export default function Home({ writings }) {
             <a
               href="https://anytranscript.ai"
               target="_blank"
+              rel="noreferrer"
               className="underline"
             >
               AnyTranscript
