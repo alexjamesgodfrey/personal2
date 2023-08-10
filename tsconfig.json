@@ -1,27 +1,21 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
     "baseUrl": "./src",
     "paths": {
-        "@/components/*": ["components/*"],
-        "@/images/*": ["images/*"],
-        "@/styles/*": ["styles/*"],
-        "@/lib/*": ["lib/*"],
-        "@/pages/*": ["pages/*"],
-        "@/icons/*": ["icons/*"],
-        "@/types/*": ["types/*"],
-        // node modules
-        "*": [
-          "node_modules/*"
-        ]
+      "@/components/*": ["components/*"],
+      "@/images/*": ["images/*"],
+      "@/styles/*": ["styles/*"],
+      "@/lib/*": ["lib/*"],
+      "@/pages/*": ["pages/*"],
+      "@/icons/*": ["icons/*"],
+      "@/types/*": ["types/*"],
+      // node modules
+      "*": ["node_modules/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -36,9 +30,9 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/pages/projects.tsx"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "**/*.tsx",
+    "src/pages/projects.tsx",
+    "src/components/DarkModeContext.jsx"
+  ],
+  "exclude": ["node_modules"]
 }

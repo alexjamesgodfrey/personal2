@@ -13,9 +13,14 @@ export function SimpleLayout({ title, intro, children }) {
         </p>
       </header>
       {title === 'Some cool things I’ve made.' && (
-        <div className="mt-4">
-          <ConsultationButton />
-        </div>
+        <>
+          <div className="mt-4 sm:hidden">
+            <ConsultationButton short />
+          </div>
+          <div className="mt-4 hidden sm:flex">
+            <ConsultationButton />
+          </div>
+        </>
       )}
       <div className="mt-8">{children}</div>
     </Container>

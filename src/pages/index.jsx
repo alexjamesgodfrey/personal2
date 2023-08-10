@@ -314,7 +314,15 @@ export default function Home({ writings }) {
               aria-label="Email me"
               icon={EmailIcon}
             />
-            <ConsultationButton />
+            <div className="hidden sm:flex md:hidden">
+              <ConsultationButton short />
+            </div>
+            <div className="hidden md:flex">
+              <ConsultationButton />
+            </div>
+          </div>
+          <div className="mt-2 sm:hidden">
+            <ConsultationButton short />
           </div>
         </div>
       </Container>
