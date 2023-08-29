@@ -145,7 +145,7 @@ export default function About() {
               <SocialLink
                 href={process.env.NEXT_PUBLIC_INSTAGRAM_LINK}
                 target="_blank"
-                rel="noreferer noopener"
+                rel="noreferer noopener "
                 icon={InstagramIcon}
                 className="mt-4"
               >
