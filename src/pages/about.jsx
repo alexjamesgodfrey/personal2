@@ -140,7 +140,7 @@ export default function About() {
                 icon={LinkedInIcon}
                 className="mt-4"
               >
-                Connect on LinkedIn
+                Connect with me on LinkedIn
               </SocialLink>
               <SocialLink
                 href={process.env.NEXT_PUBLIC_INSTAGRAM_LINK}
