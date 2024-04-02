@@ -1,4 +1,3 @@
-import ConsultationButton from '@/components/ConsultationButton'
 import { Container } from '@/components/Container'
 
 export function SimpleLayout({ title, intro, children }) {
@@ -12,16 +11,16 @@ export function SimpleLayout({ title, intro, children }) {
           {intro}
         </p>
       </header>
-      {title === 'Some cool things I’ve made.' && (
-        <>
-          <div className="mt-4 sm:hidden">
-            <ConsultationButton short />
-          </div>
-          <div className="mt-4 hidden sm:flex">
-            <ConsultationButton />
-          </div>
-        </>
-      )}
+      {/* {title === 'Some cool things I’ve made.' && (
+        // <>
+        //   <div className="mt-4 sm:hidden">
+        //     <ConsultationButton short />
+        //   </div>
+        //   <div className="mt-4 hidden sm:flex">
+        //     <ConsultationButton />
+        //   </div>
+        // </>
+      )} */}
       <div className="mt-8">{children}</div>
     </Container>
   )

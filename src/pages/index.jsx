@@ -1,7 +1,5 @@
 import Newsletter from '@/components/About/Newletter'
-import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
-import ConsultationButton from '@/components/ConsultationButton'
 import { Container } from '@/components/Container'
 import {
   EmailIcon,
@@ -9,9 +7,9 @@ import {
   InstagramIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
+import logo121 from '@/images/logos/121-circle.png'
 import logoAltumDark from '@/images/logos/altum-dark.png'
 import logoAltum from '@/images/logos/altum.png'
-import logoAnyTranscript from '@/images/logos/anytranscript.svg'
 import logoCornell from '@/images/logos/cornell.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.png'
@@ -123,11 +121,11 @@ function Resume() {
 
   let resume = [
     {
-      company: 'AnyTranscript',
+      company: 'OneTwentyOne',
       title: 'Founder',
-      start: 'June 2023',
+      start: 'October 2023',
       end: 'Present',
-      logo: logoAnyTranscript,
+      logo: logo121,
     },
     {
       company: 'Altum Labs',
@@ -153,7 +151,11 @@ function Resume() {
         <span className="ml-3">Work</span>
       </h2>
       <p className="text-sm text-zinc-600 dark:text-zinc-400">
-        You can see all my work under &quot;My Work&quot;.
+        See a full history{' '}
+        <a href="/projects" className="cursor-pointer underline">
+          here
+        </a>
+        .
       </p>
       <ol className="mt-4 space-y-4">
         {resume.map((role, roleIndex) => (
@@ -209,7 +211,7 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button
+      {/* <Button
         href="/resume90222.pdf"
         target="_blank"
         variant="secondary"
@@ -217,9 +219,9 @@ function Resume() {
       >
         Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>{' '}
+      </Button>{' '} */}
       <div className="mt-4 flex flex-col items-center">
-        <ConsultationButton short />
+        {/* <ConsultationButton short /> */}
       </div>
     </div>
   )
@@ -256,34 +258,34 @@ export default function Home({ writings }) {
   return (
     <>
       <Head>
-        <title>Alex Godfrey - Student, founder, and software developer</title>
+        <title>Alex Godfrey - Student, founder, and builder</title>
         <meta
           name="description"
-          content="I'm Alex, a Fullstack Developer and entrepreneur based in
+          content="I'm Alex, a software developer and entrepreneur based in
             Dewittville, NY. I'm currently studying computer science, math,
             and neuroscience as a junior at Cornell University. I'm also
-            the founder of multiple companies, most recently{' '}"
+            the founder of multiple companies."
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Student, founder, and software developer.
+            Student, founder, and builder.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Alex, a Fullstack Developer and entrepreneur based in
-            Dewittville, NY. I&apos;m currently studying computer science, math,
-            and neuroscience as a junior at Cornell University. I&apos;m also
-            the founder of multiple companies, most recently{' '}
+            I&apos;m Alex, a software developer and entrepreneur based in
+            Ithaca, NY. I&apos;m currently studying computer science, math, and
+            neuroscience as a junior at Cornell University. Right now, I&apos;m
+            obsessed with preventive medicine, and am building{' '}
             <a
-              href="https://anytranscript.ai"
+              href="https://onetwentyone.ai"
               target="_blank"
               rel="noreferrer"
               className="underline"
             >
-              AnyTranscript
-            </a>
-            , a suite of AI-powered tools for content creators.
+              OneTwentyone
+            </a>{' '}
+            so you have a personalized and actionable life extension plan.
           </p>
           <div className="mt-6 flex items-center gap-6">
             <SocialLink
@@ -315,14 +317,12 @@ export default function Home({ writings }) {
               icon={EmailIcon}
             />
             <div className="hidden sm:flex md:hidden">
-              <ConsultationButton short />
+              {/* <ConsultationButton short /> */}
             </div>
-            <div className="hidden md:flex">
-              <ConsultationButton />
-            </div>
+            <div className="hidden md:flex">{/* <ConsultationButton /> */}</div>
           </div>
           <div className="mt-2 sm:hidden">
-            <ConsultationButton short />
+            {/* <ConsultationButton short /> */}
           </div>
         </div>
       </Container>

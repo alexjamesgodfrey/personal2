@@ -2,6 +2,7 @@ import logoMe from '@/images/avatar.jpg'
 import logoAWS from '@/images/logos/aws.svg'
 import logoAzure from '@/images/logos/azure.svg'
 import logoBootstrap from '@/images/logos/bootstrap.svg'
+import logoDigitalOcean from '@/images/logos/digital-ocean.svg'
 import logoExpress from '@/images/logos/express.svg'
 import logoGCP from '@/images/logos/gcp.svg'
 import logoGraphQL from '@/images/logos/graphql.svg'
@@ -12,6 +13,7 @@ import logoPostgresSQL from '@/images/logos/postgresql.svg'
 import logoPrisma from '@/images/logos/prisma.svg'
 import logoReact from '@/images/logos/react.svg'
 import logoSass from '@/images/logos/sass.svg'
+import logoSwift from '@/images/logos/swift.svg'
 import logoTailwind from '@/images/logos/tailwind.svg'
 import logoTypescript from '@/images/logos/typescript.svg'
 import { Teks } from '@/types/Project'
@@ -32,7 +34,8 @@ export default function getLogo(tek: Teks) {
       return logoPostgresSQL
     case Teks.GraphQL:
       return logoGraphQL
-
+    case Teks.Swift:
+      return logoSwift
     case Teks.Express:
       return logoExpress
     case Teks.Prisma:
@@ -49,6 +52,8 @@ export default function getLogo(tek: Teks) {
       return logoGCP
     case Teks.Azure:
       return logoAzure
+    case Teks.DigitalOcean:
+      return logoDigitalOcean
     default:
       return logoMe
   }

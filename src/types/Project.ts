@@ -14,6 +14,8 @@ export enum Teks {
   'Tailwind' = 'Tailwind',
   'Bootstrap' = 'Bootstrap',
   'Sass' = 'Sass',
+  'Swift' = 'Swift',
+  'DigitalOcean' = 'DigitalOcean',
 }
 
 export interface Project {

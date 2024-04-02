@@ -1,5 +1,6 @@
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import logo121 from '@/images/logos/121-circle.png'
 import logoAltumDark from '@/images/logos/altum-dark.png'
 import logoAltum from '@/images/logos/altum.png'
 import logoAnyTranscript from '@/images/logos/anytranscript.svg'
@@ -16,9 +17,32 @@ import { DarkModeContext } from '../DarkModeContext'
 
 const projects: Project[] = [
   {
+    name: 'OneTwentyOne',
+    subtitle: 'this is it',
+    description: 'Infrastructure for the next generation of medicine.',
+    start: 'October 2023',
+    end: '',
+    link: {
+      href: 'https://onetwentyone.ai',
+      label: 'onetwentyone.ai',
+    },
+    logo: logo121,
+    teks: [
+      Teks.Swift,
+      Teks.TypeScript,
+      Teks.Next,
+      Teks.Node,
+      Teks.PostgreSQL,
+      Teks.Express,
+      Teks.GCP,
+      Teks.DigitalOcean,
+      Teks.Tailwind,
+    ],
+  },
+  {
     name: 'Bookwords',
     subtitle: 'open source project',
-    description: "The world's word count API.",
+    description: "{Paused in light of 121} The world's word count API.",
     start: 'August 2023',
     end: '',
     link: {
@@ -41,7 +65,7 @@ const projects: Project[] = [
     name: 'AnyTranscript',
     subtitle: 'startup',
     description:
-      'A comprehensive suite of AI-powered transcription tools for content creators, such as AI-enhanced transcription, blog post creation from videos, and more. ',
+      '{Paused in light of 121} A comprehensive suite of AI-powered transcription tools for content creators, such as AI-enhanced transcription, blog post creation from videos, and more.',
     start: 'June 2023',
     end: '',
     link: {
@@ -61,7 +85,7 @@ const projects: Project[] = [
     name: 'Altum Labs',
     subtitle: 'API contractor',
     description:
-      'Contracted by Altum Labs CEO to architect and implement multi-tenant database and corresponding API from scratch. Secured database with over 80 RLS policies, serving over 200k successful requests. Continued to, lead team of 9 web devs to develop plantalysis, an online lab testing marketplace. In early August, I was offered a full-time position as CTO.',
+      'Contracted by Altum Labs CEO to architect and implement multi-tenant database and corresponding API from scratch. Secured database with over 80 RLS policies, serving over 200k successful requests. Continued to lead team of 12 engineers to develop plantalysis, an online lab testing marketplace. In early August, I was offered a full-time position as CTO.',
     start: 'May 2023',
     end: 'Aug 2023',
     link: {
@@ -110,8 +134,8 @@ const projects: Project[] = [
     start: 'December 2022',
     end: 'March 2022',
     link: {
-      href: 'https://calctrainer.io',
-      label: 'calctrainer.io',
+      href: 'https://121health.app',
+      label: 'domain sold',
     },
     teks: [
       Teks.JavaScript,
