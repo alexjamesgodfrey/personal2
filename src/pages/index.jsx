@@ -152,9 +152,9 @@ function Resume() {
       </h2>
       <p className="text-sm text-zinc-600 dark:text-zinc-400">
         See a full history{' '}
-        <a href="/projects" className="cursor-pointer underline">
+        <Link href="/projects" className="cursor-pointer underline">
           here
-        </a>
+        </Link>
         .
       </p>
       <ol className="mt-4 space-y-4">
