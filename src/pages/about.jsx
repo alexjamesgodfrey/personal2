@@ -133,6 +133,15 @@ export default function About() {
                 See my Code
               </SocialLink>
               <SocialLink
+                href={'https://henrymalarkey.com'}
+                target="_blank"
+                rel="noreferer noopener"
+                icon={GitHubIcon}
+                className="mt-4"
+              >
+                Boost
+              </SocialLink>
+              <SocialLink
                 href={process.env.NEXT_PUBLIC_LINKEDIN_LINK}
                 target="_blank"
                 rel="noreferer noopener"
