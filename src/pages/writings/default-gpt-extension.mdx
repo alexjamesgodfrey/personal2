@@ -1,0 +1,52 @@
+import { WritingLayout } from '@/components/WritingLayout'
+
+export const meta = {
+  author: 'Alex Godfrey',
+  date: '2025-04-25',
+  title: 'Default GPT Extension',
+  description: 'Privacy policy',
+  readLength: 2,
+//   assignment: {
+//     title: 'Diagnostic Essay',
+//     courseTitle: 'MEDVL1101: Mind & Soul in the Middle Ages',
+//     courseCode: 'medvl1101',
+//     courseColor: 'bg-purple-400',
+//   },
+}
+
+export default (props) => <WritingLayout meta={meta} {...props} />
+
+# Privacy Policy
+
+## Single Purpose Description
+
+This extension ensures that every time you click the **New Chat** button on ChatGPT, it automatically opens with your chosen default model. It intercepts page loads and button clicks to append a `model` query parameter based on your saved preference.
+
+## Storage Use Justification
+
+The `storage.sync` permission is required to save and retrieve the user’s selected default model (e.g., `gpt-4o`, `o4-mini`). Using Chrome’s sync storage allows:
+
+- **Persistence**: Preferences persist across browser sessions.
+- **Sync**: If the user is signed in with the same Google account, the choice propagates across devices.
+
+## Scripting Justification
+
+The `scripting` permission enables the extension to programmatically:
+
+1. **Inject** and run `content.js` on ChatGPT pages.
+2. **Modify** the **New Chat** button’s `href` attribute to include the default model.
+
+## Host Permission Justification
+
+The extension declares host permissions for `https://chatgpt.com/*` so it can:
+
+- **Detect** when the user is on a ChatGPT page.
+- **Redirect** or **rewrite** URLs on ChatGPT domains.
+
+## Privacy Policy Details
+
+- **Data Collection**: This extension does **not** collect or transmit any personal or usage data. The only data saved is the user’s chosen model name, stored locally and synced via Chrome’s `storage.sync`.
+- **Third-Party Services**: No third-party analytics, advertising, or tracking services are used.
+- **Data Sharing**: No data is shared with external parties.
+- **Security**: All operations occur within the browser. No outbound network requests are made by the extension.
+- **Contact**: For questions, please visit the project repository or contact the developer directly via the extension’s support link.
